@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .buttons{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                
+            }
+            body{
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: url(https://cdn.hipwallpaper.com/i/31/76/E8FiYD.jpg)                
+                
+            }
+            header{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }  
+            
+        </style>
+
+        <title>My Login Form</title>
+
+    </head>
+<body>
+    <form class="header">
+    <div>
+    <header><img src="https://mtinews.in/assets/media/BridgeLabz-Logo-2.png" width="100" height="100"><font color = "yellow"; font size = 10px>Welcome To Bridgelabz</font></header><br><br>
+    </div></form>
+    <form class="form">
+        <div>
+            <label><font color = "white"; font size = 5px> FirstName :</font></label>
+        <input type="text" value="" id="FirstName">
+        </div><br>
+
+        <div>
+            <label><font color = "white"; font size = 5px>LastName :</font></label>
+        <input type="text" value="" id="LastName">
+        </div><br>
+
+        <div>
+            <label><font color = "white"; font size = 5px>UserName :</font></label>
+        <input type="text" value="" id="UserName">
+        </div><br>
+
+        <div>
+            <label><font color = "white"; font size = 5px>CreatePassword :</font></label>
+        <input type="password" id="CreatePassword">
+        </div><br>
+
+        <div>
+            <label><font color = "white"; font size = 5px>ConfirmPassword :</font></label>
+        <input type="password" id="ConfirmPassword">
+        </div><br>
+
+        <div>
+            <label for="gender"><font color = "white"; font size = 5px>Gender : </font></label>
+        <input type="radio" name="gender" value="Male" id="Male"><font color = "white"; font size = 5px>Male</font> 
+        <input type="radio" name="gender" value="Female" id="Female"><font color = "white"; font size = 5px>Female</font> 
+        </div><br>
+
+        <div>
+            <label><font color = "white"; font size = 5px>Degree : </font></label>
+            <input type="checkbox" name="B.tech" id="B.tech" name="Degree"><font color = "white"; font size = 5px>B.tech</font>
+            <input type="checkbox" name="M.tech" id="M.tech" name="Degree"><font color = "white"; font size = 5px>M.tech</font>
+        </div><br>
+
+        <div class="address">
+            <label for=""><font color = "white"; font size = 5px>Address : </font></label>
+            <textarea name="textarea" id="textarea" cols="20" rows="1.5"></textarea>
+        </div><br>
+
+        <div>
+            <label for=""><font color = "white"; font size = 5px>City : </font></label>
+            <select name="" id="">
+                <option value="NoSelection">NoSelection</option>
+                <option value="Maharastra">Maharastra</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Bihar">Bihar</option>
+            </select>
+        </div><br><br>
+
+        <div>
+            <input type="submit" value="Submit Form" id="Submit" style="margin-right: 10px;">
+        <input type="reset" value="Reset Form" id="Reset" style="margin-left: 15px;">
+        </div>
+
+    </form>
+
+    <script>
+        
+
+        let FirstName;
+        function getFirstName(){
+            
+            FirstName=this.value
+            //console.log(FirstName)
+        }
+        let FirstNameId = document.getElementById("FirstName")
+        FirstNameId.addEventListener("change",getFirstName)
+
+        let LastName;
+        function getLastName(){
+            
+            LastName=this.value
+           // console.log(LastName)
+        }
+        let LastNameId = document.getElementById("LastName")
+        LastNameId.addEventListener("change",getLastName)
+
+        let UserName;
+        function getUserName(){
+            
+            UserName=this.value
+           // console.log(UserName)
+        }
+        let UserNameId = document.getElementById("UserName")
+        UserNameId.addEventListener("change",getUserName)
+        //console.log(FirstName,LastName,UserName)
+        
+
+
+        function OnSubmit(){
+            event.preventDefault()
+            //Local Storage
+            //localStorage.setItem("FirstName",FirstName)
+            //localStorage.setItem("LastName",LastName)
+            //localStorage.setItem("UserName",UserName)
+            //Session Storage
+            //sessionStorage.setItem("FirstName",FirstName)
+            //sessionStorage.setItem("LastName",LastName)
+            //sessionStorage.setItem("UserName",UserName)
+            let UserDetails={
+            FirstName:FirstName,
+            LastName:LastName,
+            UserName:UserName
+        }
+
+            console.log(UserDetails)
+            localStorage.setItem("UserDetails",JSON.stringify(UserDetails))
+            let UserDetailsFromStorage = localStorage.getItem("UserDetails")
+            console.log(JSON.parse(UserDetailsFromStorage))
+
+            
+            alert("Form Submitted Successfully")
+           // let FirstNameValue = localStorage.getItem("FirstName")
+           // console.log("FirstNameValue",FirstNameValue)
+        }
+
+        let button = document.getElementById("Submit")
+        button.addEventListener("click",OnSubmit)
+
+        FirstNameId.removeEventListener()
+        LastNameId.removeEventListener()
+        UserNameId.removeEventListener()
+
+    </script>
+    
+</body>
+</html>

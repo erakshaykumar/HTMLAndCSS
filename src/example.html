@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Example</title>
+        <style>
+            body{
+                display: flex;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <span id ="World">Hello World</span>
+            <span id ="Hello"></span>
+            <button id ="Submit">Submit</button>
+        </div>
+        <script>
+            function OnSubmit(){
+               alert("Hello World")
+                let id = document.getElementById("Hello")
+                id.innerHTML="Akshay";
+                id.style.color = "blue"
+                id.style.fontSize="20px"
+                id.style.background="red";
+
+                let Hello = document.getElementById("World")
+                Hello.style.background="pink";
+            }
+            let Submit = document.getElementById("Submit")
+            Submit.onclick=OnSubmit;
+
+        </script>
+    </body>
+</html>

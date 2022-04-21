@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Media Queries</title>
+    <style>
+      .mobile {
+        background-color: aqua;
+        font-size: 100px;
+        display: none;
+      }
+      .tablet {
+        background-color: gold;
+        font-size: 100px;
+        display: none;
+      }
+      .desktop {
+        background-color: blueviolet;
+        font-size: 100px;
+        display: none;
+      }
+      .laptop {
+        background-color: brown;
+        font-size: 100px;
+        display: none;
+      }
+      @media screen and (max-width: 400px) {
+         .mobile{
+             display: block;
+             font-size: 22px;
+         }
+         
+      }
+      @media screen and (max-width: 600px) and (min-width: 400px) {
+         .tablet{
+             display: block;
+             font-size: 22px;
+         }  
+      }
+      @media screen and (max-width: 800px) and (min-width: 600px) {
+         .laptop{
+             display: block;
+             font-size: 22px;
+         }
+         
+      }
+      @media screen and (min-width: 801px) {
+         .desktop{
+             display: block;
+             font-size: 22px;
+         }
+         
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Media queries</h1></header>
+    <div class="mobile">I am mobile</div>
+    <div class="tablet">I am tablet</div>
+    <div class="desktop">I am desktop</div>
+    <div class="laptop">I am laptop</div>
+  </body>
+</html>
